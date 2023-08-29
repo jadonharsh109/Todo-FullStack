@@ -33,6 +33,7 @@ const CreateToDoCard = (props) => {
     <div className='CreateCardDiv'>
         <span className='titleCard'>Create Task</span>
         <input className='createTaskinput' onChange={handleChange} value={message} required type='text'placeholder='Task Name...'/>
+        <textarea style={{resize : "none", width : "80%"}} className='createTaskinputDes' onChange={handleChange} value={message} required type='text'placeholder='Task Description...'/>
         <button onClick={createTask} className='createTaskbutton'>Add Task</button>
     </div>
   )

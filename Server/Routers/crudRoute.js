@@ -9,5 +9,6 @@ router
     .route('/:id')
     .delete(crudController.deleteTodo)
     .patch(crudController.editTodo)
+    .patch(crudController.changeTodo)
 
 module.exports = router;

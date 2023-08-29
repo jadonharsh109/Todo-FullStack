@@ -6,25 +6,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 .todoContainer{
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  width: 100%;
   position: relative;
-  height: 80vh;
-  width: 30vw;
   background-color: rgb(247, 247, 247);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 10px;
 }
 .cards{
   scrollbar-color: rgb(149, 189, 250) #e0e0e0;
-  scrollbar-width : thin;
-  height: 70vh;
-  overflow-y : scroll;  
+  scrollbar-width: thin;
+  height: 370px;
+  width: 29.3%;
+  min-width: 240px;
+  overflow-y: scroll;
+  margin: 0 20px;
 }
 .titleContainer{
   height: 50px;
   width: 100%; 
-  background-color: rgb(53, 134, 255);
   border-radius: 5px;
   font-size: 30px;
   font-weight: 600;
@@ -42,7 +47,7 @@
   align-content: center;
   align-items: center;
   height: 50px;
-  width: 90%;
+  width: 100%;
   background-color: rgb(255, 255, 255);
   margin:  10px auto;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
@@ -51,7 +56,7 @@
   cursor: pointer;
   position: absolute;
   bottom: 0;
-  margin: 0 40%;
+  margin: 0 50%;
 }
 .checkBox{
   margin: 8px;
@@ -69,17 +74,28 @@
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
+
+.dragIcon{
+  margin: 8px;
+  cursor: pointer;
+}
+.dragIcon:hover{
+  margin: 8px;
+  height: 23px;
+  width: 23px;
+}
+
 .CreateCardDiv{
   display: flex;
   flex-direction: column;
   position: absolute;
   height: fit-content;
-  width: 90%;
+  width: 400px;
   z-index: 15;
   background-color: rgb(211, 211, 211);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  top: 60%;
-  right: 5%;
+  bottom: 40px;
+  right: 50px;
   align-items: center;
   align-content: center;
   animation: fadeInUp; /* referring directly to the animation's @keyframe declaration */
@@ -113,7 +129,14 @@
   margin: 5px;
 }
 @media screen and (max-width: 750px) {
+  .App{
+    height: fit-content;
+  }
   .todoContainer{
+    display: block;
     width: 90%;
+  }
+  .cards{
+    min-width: 89%;
   }
 }

@@ -56,10 +56,29 @@ exports.deleteTodo = async (req, res) => {
 exports.editTodo = async (req, res) => {
     
     try{
-
         res
         .status(200)
         .json({status: 'Success!'})
+    }catch(err){
+        res
+        .status(400)
+        .json({status: `Failed`, Message: err})
+        
+    }
+}
+
+exports.changeTodo = async (req, res, next) => {
+    try{
+        const changeStatus = crudScheme.findByIdAndUpdate(req.params.id, { taskStatus: req.params.taskStatus}
+        )
+        .status(201)
+        .json({
+            status: 'Success!',
+            data: {
+                changeStatus
+            }
+        })
+
     }catch(err){
         res
         .status(400)

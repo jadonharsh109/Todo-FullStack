@@ -12,7 +12,7 @@ const crudScheme = new Schema({
   },
   taskStatus: {
     type: String,
-    default: "pending",
+    default: "todo",
     required: [true, 'Name of the Task is Required']
   },
 });
